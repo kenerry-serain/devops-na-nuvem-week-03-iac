@@ -103,3 +103,19 @@ variable "eks_cluster" {
     scaling_config_min_size           = 2
   }
 }
+
+variable "ecr_repositories" {
+  type = list(object({
+    name                 = string
+    image_tag_mutability = string
+  }))
+
+  default = [{
+    name                 = "devops-na-nuvem-week/production/backend"
+    image_tag_mutability = "MUTABLE"
+    },
+    {
+      name                 = "devops-na-nuvem-week/production/frontend"
+      image_tag_mutability = "MUTABLE"
+  }]
+}
