@@ -67,3 +67,13 @@
     - name: Helm Install EKS ALB Controller (Output)
       debug:
         var: helm_install_output
+
+    - name: Installing Argo CD
+      shell: |
+        kubectl create namespace argocd
+        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+      register: install_argocd_output
+
+    - name: Installing Argo CD (Output)
+      debug:
+        var: install_argocd_output

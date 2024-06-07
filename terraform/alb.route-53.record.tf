@@ -1,5 +1,5 @@
 data "aws_lb" "this" {
-  arn = "arn:aws:elasticloadbalancing:us-east-1:654654554686:loadbalancer/app/devops-na-nuvem-week/ebac5b66a69a43dc"
+  arn = "arn:aws:elasticloadbalancing:us-east-1:654654554686:loadbalancer/app/devops-na-nuvem-week/2678af2d20812371"
 }
 
 resource "aws_route53_record" "alb" {
